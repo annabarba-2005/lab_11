@@ -1,0 +1,398 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    max-width: 1280px;
+    min-width: 320px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Хедер */
+.header {
+    padding: 45px 0 41px;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    margin: 0 200px;
+}
+
+.header__logo {
+    width: 173px;
+    height: 33px;
+}
+
+/* Профиль */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 200px 50px;
+}
+
+.profile__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile__info {
+    flex-grow: 1;
+    max-width: 415px;
+}
+
+.profile__name {
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.14;
+    margin: 0 0 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.profile__description {
+    font-size: 18px;
+    line-height: 1.22;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.profile__edit-button {
+    width: 24px;
+    height: 24px;
+    background: transparent url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7.91667V10H2.08333L8.22667 3.85667L6.14333 1.77333L0 7.91667ZM9.83667 2.19667C10.0544 1.97889 10.0544 1.62111 9.83667 1.40333L8.59667 0.163333C8.37889 -0.0544444 8.02111 -0.0544444 7.80333 0.163333L6.77333 1.19333L8.85667 3.27667L9.83667 2.19667Z' fill='white'/%3E%3C/svg%3E") center no-repeat;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.profile__edit-button:hover {
+    opacity: 0.6;
+}
+
+.profile__add-button {
+    width: 150px;
+    height: 50px;
+    background: transparent url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 9.77778H12.2222V0H9.77778V9.77778H0V12.2222H9.77778V22H12.2222V12.2222H22V9.77778Z' fill='white'/%3E%3C/svg%3E") center no-repeat;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
+}
+
+/* Карточки */
+.elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+    gap: 20px 17px;
+    margin: 0 200px;
+    padding-bottom: 66px;
+}
+
+.element {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #000;
+    position: relative;
+}
+
+.element__image {
+    width: 100%;
+    height: 282px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.element__info {
+    padding: 25px 20px 31px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.element__title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.21;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.element__like-button {
+    width: 21px;
+    height: 19px;
+    background: transparent url("data:image/svg+xml,%3Csvg width='21' height='19' viewBox='0 0 21 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.8002 1.73234C16.9822 -0.137586 14.0547 -0.137586 12.2367 1.73234L10.9996 3.01047L9.7625 1.73234C7.94453 -0.137586 5.01699 -0.137586 3.19902 1.73234C1.38105 3.60227 1.38105 6.63948 3.19902 8.5094L4.43614 9.78754L10.9996 16.5605L17.5631 9.78754L18.8002 8.5094C20.6182 6.63948 20.6182 3.60227 18.8002 1.73234Z' fill='%23E5E5E5'/%3E%3C/svg%3E") center no-repeat;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.element__like-button:hover {
+    opacity: 0.5;
+}
+
+.element__like-button_active {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='19' viewBox='0 0 21 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.8002 1.73234C16.9822 -0.137586 14.0547 -0.137586 12.2367 1.73234L10.9996 3.01047L9.7625 1.73234C7.94453 -0.137586 5.01699 -0.137586 3.19902 1.73234C1.38105 3.60227 1.38105 6.63948 3.19902 8.5094L4.43614 9.78754L10.9996 16.5605L17.5631 9.78754L18.8002 8.5094C20.6182 6.63948 20.6182 3.60227 18.8002 1.73234Z' fill='%23000'/%3E%3C/svg%3E");
+}
+
+/* Попап */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.popup_opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup__container {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 34px 36px;
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+}
+
+.popup__close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 32px;
+    height: 32px;
+    background: transparent url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 3.22386L28.7761 0L16 12.7761L3.22386 0L0 3.22386L12.7761 16L0 28.7761L3.22386 32L16 19.2239L28.7761 32L32 28.7761L19.2239 16L32 3.22386Z' fill='white'/%3E%3C/svg%3E") center no-repeat;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.popup__close-button:hover {
+    opacity: 0.6;
+}
+
+.popup__title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.21;
+    margin: 0 0 54px;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 0 13px;
+    font-size: 14px;
+    line-height: 1.21;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+.popup__input:focus {
+    border-bottom-color: #000;
+}
+
+.popup__input_type_error {
+    border-bottom-color: #FF0000;
+}
+
+.popup__error {
+    font-size: 12px;
+    line-height: 1.25;
+    color: #FF0000;
+    min-height: 30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.popup__error_visible {
+    opacity: 1;
+}
+
+.popup__submit-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding: 14px 0;
+    font-size: 18px;
+    line-height: 1.22;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 18px;
+}
+
+.popup__submit-button:hover {
+    opacity: 0.8;
+}
+
+.popup__submit-button:disabled {
+    background-color: #E5E5E5;
+    color: #000;
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+/* Футер */
+.footer {
+    margin: 0 200px;
+    padding-bottom: 60px;
+}
+
+.footer__copyright {
+    font-size: 18px;
+    line-height: 1.22;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1279px) {
+    .header,
+    .profile,
+    .elements,
+    .footer {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .header,
+    .profile,
+    .elements,
+    .footer {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 28px 0 32px;
+        margin: 0;
+    }
+    
+    .header__logo {
+        margin-left: 27px;
+        width: 126px;
+        height: 24px;
+    }
+    
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        gap: 26px;
+        margin: 42px 19px 36px;
+        text-align: center;
+    }
+    
+    .profile__avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile__info {
+        max-width: 100%;
+    }
+    
+    .profile__name {
+        font-size: 27px;
+        line-height: 1.22;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+    
+    .profile__description {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .profile__edit-button {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 28px;
+        top: 35px;
+    }
+    
+    .profile__add-button {
+        width: 100%;
+        max-width: 282px;
+        background-size: 16px 16px;
+    }
+    
+    .elements {
+        margin: 0 19px;
+        padding-bottom: 48px;
+    }
+    
+    .popup__container {
+        max-width: 282px;
+        padding: 25px 22px;
+    }
+    
+    .popup__close-button {
+        top: -36px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+    }
+    
+    .popup__title {
+        font-size: 18px;
+        margin-bottom: 75px;
+    }
+    
+    .popup__submit-button {
+        font-size: 14px;
+        padding: 14px 0;
+    }
+    
+    .footer {
+        margin: 0 19px;
+        padding-bottom: 36px;
+    }
+    
+    .footer__copyright {
+        font-size: 14px;
+    }
+}
